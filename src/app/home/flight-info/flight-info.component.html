@@ -1,0 +1,8 @@
+<div class="container">
+    <mat-card *ngIf="flight">
+        <p><strong>Plane Number:</strong> {{flight.plane}}</p>
+        <p><strong>Duration:</strong> {{flight.duration | duration}}</p>
+        <p><strong>Origin Gate:</strong> {{flight.from_gate}}</p>
+        <p><strong>Destination Gate:</strong> {{flight.to_gate}}</p>
+    </mat-card>
+</div>

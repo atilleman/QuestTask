@@ -1,0 +1,27 @@
+<div *ngIf="flights.length">
+  <table mat-table [dataSource]="flights" class="tasks-table">
+    <ng-container matColumnDef="num">
+      <th mat-header-cell *matHeaderCellDef> Flight Number </th>
+      <td mat-cell *matCellDef="let element" (click)="selectFlight(flight)" [class.selectedRow]="flight === selectedFlight"> {{element.num}} </td>
+    </ng-container>
+    <ng-container matColumnDef="from">
+      <th mat-header-cell *matHeaderCellDef> Origin </th>
+      <td mat-cell *matCellDef="let element"> {{element.from}} </td>
+    </ng-container>
+    <ng-container matColumnDef="from_date">
+      <th mat-header-cell *matHeaderCellDef> Origin Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.from_date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="to">
+      <th mat-header-cell *matHeaderCellDef> Destination </th>
+      <td mat-cell *matCellDef="let element"> {{element.to}} </td>
+    </ng-container>
+    <ng-container matColumnDef="to_date">
+      <th mat-header-cell *matHeaderCellDef> Destination Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.to_date}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.selectedRow]="row === selectedFlight"
+      (click)="selectFlight(row)"></tr>
+  </table>
+</div>

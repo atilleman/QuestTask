@@ -1,0 +1,11 @@
+<div class="flex">
+  <div>
+    <app-workers-list (selectedWorker)="onWorkerSelected($event)"></app-workers-list>
+  </div>
+  <div>
+    <app-workers-flights [workerId]="selectedWorkerId" (flightSelected)="onFlightSelected($event)"></app-workers-flights>
+  </div>
+  <div>
+    <app-flight-info [flight]="selectedFlight"></app-flight-info>
+  </div>
+</div>

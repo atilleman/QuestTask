@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="topSection">
+    <div class="header">Workers</div>
+  </div>
+  <div class="bottomSection">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let worker of allWorkers" (click)="selectWorker(worker.id)"  [ngClass]="{'selected': worker.id === selectedWorkerId}"
+      [tabindex]="0">
+        {{worker.name}}
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</div>
